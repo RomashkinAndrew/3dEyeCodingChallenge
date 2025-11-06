@@ -1,0 +1,6 @@
+.vs
+TestResults
+bin
+obj
+TestFileGenerator.csproj.user
+Sorter.csproj.user
