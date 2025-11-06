@@ -1,12 +1,12 @@
-#A 3D Eye Coding Assignment
+# A 3D Eye Coding Assignment
 
 This project implements two different approaches to sorting a file:
 
-##Merge Sort
+## Merge Sort
 
 The file is divided into chunks (called runs), which are loaded into RAM either sequentially or in parallel. Each run is sorted and written back to disk. During the merge phase, lines from all runs are read simultaneously, and the smallest line is written to the output file.
 
-##Heap Sort
+## Heap Sort
 
 This approach builds an index (stored either in RAM or on disk) that contains the byte offsets and lengths of all lines in the source file. The index is then sorted using a heap sort algorithm, and the sorted file is constructed based on the sorted index.
 
