@@ -110,7 +110,7 @@ partial class MainForm
         textBox_runSize.Name = "textBox_runSize";
         textBox_runSize.Size = new Size(63, 23);
         textBox_runSize.TabIndex = 4;
-        textBox_runSize.Text = "100";
+        textBox_runSize.Text = "1";
         // 
         // label1
         // 

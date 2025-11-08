@@ -59,6 +59,10 @@ public class HeapSorter(string fileName) : IProgressReporting
             HeapSort(cancellationToken);
             WriteToOutputFile(cancellationToken);
         }
+        catch (Exception e)
+        {
+            Log?.Invoke($"Error during the sort: {e}");
+        }
         finally
         {
             Cleanup();

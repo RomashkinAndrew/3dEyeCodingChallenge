@@ -41,17 +41,21 @@ public class MergeSorter(string fileName) : IProgressReporting
         statistics.Reset();
         DateTime start = DateTime.Now;
 
-        if (Directory.Exists(RunFolder))
-        {
-            Directory.Delete(RunFolder, true);
-        }
-
-        Directory.CreateDirectory(RunFolder);
-
         try
         {
+            if (Directory.Exists(RunFolder))
+            {
+                Directory.Delete(RunFolder, true);
+            }
+
+            Directory.CreateDirectory(RunFolder);
+
             CreateRuns(cancellationToken);
             MergeRuns(cancellationToken);
+        }
+        catch (Exception e)
+        {
+            Log?.Invoke($"Error during the sort: {e}");
         }
         finally
         {
@@ -119,7 +123,7 @@ public class MergeSorter(string fileName) : IProgressReporting
             lines.Sort();
 
             processedBytes += runLengthBytes;
-            Progress = (int)(processedBytes * 100 / source.LengthInBytes/3);
+            Progress = (int)(processedBytes * 100 / source.LengthInBytes / 3);
 
             using DataFile run = new(GetRunFileName(i), DataFile.Mode.Write, BufferSize, runLengthBytes);
             foreach (Line line in lines)

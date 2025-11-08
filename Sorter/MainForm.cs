@@ -12,7 +12,7 @@ public partial class MainForm : Form
     {
         InitializeComponent();
         comboBox_bufferSizeUnit.SelectedIndex = 1;
-        comboBox_runSizeUnit.SelectedIndex = 1;
+        comboBox_runSizeUnit.SelectedIndex = 0;
     }
 
     private void button_openFile_Click(object sender, EventArgs e)
